@@ -1,15 +1,13 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Date;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        SLZVerwaltung slzVerwaltung = new SLZVerwaltung();
+        Schueler schueler = new Schueler(0, "Wolf", "Timo");
+        slzVerwaltung.getSchueler().add(schueler);
+        Geraetetyp geraetetyp = new Geraetetyp(1, "PC");
+        slzVerwaltung.getTypen().add(geraetetyp);
+        slzVerwaltung.reservieren(1, new Date(11,9,2001), new Date(11,9,2002), schueler);
+        System.out.print(slzVerwaltung);
     }
 }
