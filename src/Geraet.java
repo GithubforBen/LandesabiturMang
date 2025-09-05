@@ -8,6 +8,7 @@ public class Geraet {
     private List<Reservierung> reservierungen;
 
     public Geraet(Geraetetyp typ) {
+        geraetetyp = typ;
         reservierungen = new LinkedList<>();
     }
 
